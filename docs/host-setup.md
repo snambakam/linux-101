@@ -56,7 +56,7 @@ az vm create `
 	--public-ip-sku Standard `
 	--admin-username <your-user-id> `
 	--assign-identity [system] `
-	--ssh-key-values ~/.ssh/<your-user-id>-ubuntu-dev-1.pub `
+	--ssh-key-values c:/users/<your-user-id>/.ssh/<your-user-id>-ubuntu-dev-1.pub `
 	--location westus2
 ```
 
@@ -72,7 +72,7 @@ az vm create `
 	--public-ip-sku Standard `
 	--admin-username snambakam `
 	--assign-identity [system] `
-	--ssh-key-values ~/.ssh/snambakam-ubuntu-dev-1.pub `
+	--ssh-key-values c:/users/snambakam/.ssh/snambakam-ubuntu-dev-1.pub `
 	--location westus2
 ```
 
