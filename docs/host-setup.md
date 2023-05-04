@@ -30,7 +30,7 @@ ssh-keygen `
     -m PEM `
     -t ed25519 `
     -C "<your-user-id>@<your-user-id>-ubuntu-dev-1" `
-    -f ~/.ssh/<your-user-id>-ubuntu-dev-1
+    -f c:/users/<your-user-id>/.ssh/<your-user-id>-ubuntu-dev-1
 ```
 Note: [Detailed notes on creating SSH keys](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
 
@@ -41,7 +41,7 @@ ssh-keygen `
     -m PEM `
     -t ed25519 `
     -C "snambakam@snambakam-ubuntu-dev-1" `
-    -f ~/.ssh/snambakam-ubuntu-dev-1
+    -f c:/users/snambakam/.ssh/snambakam-ubuntu-dev-1
 ```
 
 ### Step 3: Generate VM in Azure
