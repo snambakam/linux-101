@@ -25,7 +25,7 @@ az account set --subscription <subscription uuid>
 
 ### Step 2: Generate SSH key pair
 
-```shell
+```powershell
 ssh-keygen \
     -m PEM \
     -t ed25519-sk \
@@ -46,7 +46,7 @@ ssh-keygen \
 
 ### Step 3: Generate VM in Azure
 
-```shell
+```powershell
 az vm create \
 	--resource-group <your-user-id>-dev-test \
 	--name <your-user-id>-ubuntu-dev-1 \
@@ -84,7 +84,7 @@ The file would be located at ~/.ssh/config
 
 The contents of this file should include the following.
 
-```shell
+```powershell
 Host <your-user-id>-ubuntu-dev-1
     Hostname <Public IP Address of your VM>
     User <your-user-id>
