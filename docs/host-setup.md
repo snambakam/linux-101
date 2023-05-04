@@ -28,7 +28,8 @@ az account set --subscription <subscription uuid>
 ```shell
 ssh-keygen `
     -m PEM `
-    -t ed25519 `
+    -t rsa `
+    -b 4096 `
     -C "<your-user-id>@<your-user-id>-ubuntu-dev-1" `
     -f c:/users/<your-user-id>/.ssh/<your-user-id>-ubuntu-dev-1
 ```
@@ -39,7 +40,8 @@ Note: [Detailed notes on creating SSH keys](https://learn.microsoft.com/en-us/az
 ```
 ssh-keygen `
     -m PEM `
-    -t ed25519 `
+    -t rsa `
+    -b 4096 `
     -C "snambakam@snambakam-ubuntu-dev-1" `
     -f c:/users/snambakam/.ssh/snambakam-ubuntu-dev-1
 ```
@@ -52,7 +54,7 @@ az vm create `
 	--name <your-user-id>-ubuntu-dev-1 `
 	--image Canonical:0001-com-ubuntu-server-jammy:22_04-lts:22.04.202304280 `
 	--os-disk-size-gb 40 `
-	--size Standard_DC4ds_v3 `
+	--size Standard_F2s_v2 `
 	--public-ip-sku Standard `
 	--admin-username <your-user-id> `
 	--assign-identity [system] `
@@ -68,7 +70,7 @@ az vm create `
 	--name snambakam-ubuntu-dev-1 `
 	--image Canonical:0001-com-ubuntu-server-jammy:22_04-lts:22.04.202304280 `
 	--os-disk-size-gb 40 `
-	--size Standard_DC4ds_v3 `
+	--size Standard_F2s_v2 `
 	--public-ip-sku Standard `
 	--admin-username snambakam `
 	--assign-identity [system] `
