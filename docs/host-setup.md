@@ -28,7 +28,7 @@ az account set --subscription <subscription uuid>
 ```shell
 ssh-keygen `
     -m PEM `
-    -t ed25519-sk `
+    -t ed25519 `
     -C "<your-user-id>@<your-user-id>-ubuntu-dev-1" `
     -f ~/.ssh/<your-user-id>-ubuntu-dev-1
 ```
@@ -39,7 +39,7 @@ Note: [Detailed notes on creating SSH keys](https://learn.microsoft.com/en-us/az
 ```
 ssh-keygen `
     -m PEM `
-    -t ed25519-sk `
+    -t ed25519 `
     -C "snambakam@snambakam-ubuntu-dev-1" `
     -f ~/.ssh/snambakam-ubuntu-dev-1
 ```
