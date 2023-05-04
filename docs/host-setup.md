@@ -51,7 +51,7 @@ az vm create `
 	--resource-group <your-user-id>-dev-test `
 	--name <your-user-id>-ubuntu-dev-1 `
 	--image Canonical:0001-com-ubuntu-server-jammy:22_04-lts:22.04.202304280 `
-	--os-disk-size-gb 20 `
+	--os-disk-size-gb 40 `
 	--size Standard_DC4ds_v3 `
 	--public-ip-sku Standard `
 	--admin-username <your-user-id> `
@@ -67,7 +67,7 @@ az vm create `
 	--resource-group snambakam-dev-test `
 	--name snambakam-ubuntu-dev-1 `
 	--image Canonical:0001-com-ubuntu-server-jammy:22_04-lts:22.04.202304280 `
-	--os-disk-size-gb 20 `
+	--os-disk-size-gb 40 `
 	--size Standard_DC4ds_v3 `
 	--public-ip-sku Standard `
 	--admin-username snambakam `
@@ -100,3 +100,7 @@ Host snambakam-ubuntu-dev-1
     IdentityFile "C:/Users/snambakam/.ssh/snambakam-ubuntu-dev-1"
 ```
 
+# References
+
+1. [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/)
+1. [Device Login Page](https://microsoft.com/devicelogin)
