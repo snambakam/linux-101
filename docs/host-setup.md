@@ -130,6 +130,8 @@ ssh-add $env:USERPROFILE\.ssh\<your-user-id>-ubuntu-dev-1
 
 ### Step 7: Install packages required for development
 
+On the Development VM that we setup in Azure, install the following packages using the Terminal Window on the remote connection setup in VSCode.
+
 ```bash
 sudo apt install \
     autoconf \
