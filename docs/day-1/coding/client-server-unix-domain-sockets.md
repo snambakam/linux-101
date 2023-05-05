@@ -78,7 +78,7 @@ Run the server and make sure it works.
 echo $?
 ```
 
-## Step 2: Let us add a basic client
+## Step 3: Let us add a basic client
 
 Copy over the code for a [basic client](code/day-1/client-server-over-udp/reserve/basic-client).
 
@@ -115,4 +115,52 @@ bootstrap and build
 cd build
 ./bootstrap.sh
 make
+```
+
+## Step 4: Let us add a basic command line interface
+
+Copy over the code for a [basic tools](code/day-1/client-server-over-udp/reserve/basic-tools).
+
+```
+cd ..
+cp -r reserve/basic-tools/* .
+```
+
+Change configure.ac to include the new Makefile.am
+
+```
+AC_CONFIG_FILES([Makefile
+    client/Makefile
+    server/Makefile
+    server/csuds-server/Makefile
+    server/csudsd/Makefile
+    tools/Makefile
+    tools/csuds-cli/Makefile
+    utils/Makefile
+])
+```
+
+Change top level Makefile.am to include tools after client.
+
+```
+SUBDIRS = \
+    utils \
+    server \
+    client \
+    tools
+```
+
+bootstrap and build
+
+```
+cd build
+./bootstrap.sh
+make
+```
+
+Run the command line interface and ensure it works
+
+```
+./tools/csuds-cli/csuds-cli
+echo $?
 ```

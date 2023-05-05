@@ -1,0 +1,2 @@
+SUBDIRS = \
+	csuds-cli
