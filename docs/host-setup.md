@@ -128,6 +128,18 @@ ssh-add $env:USERPROFILE\.ssh\<your-user-id>-ubuntu-dev-1
 1. On the bottom left corner, click on the "Open a Remote Window" icon and choose "Connect to Host".
    1. Choose the profile that was created in $env:USERPROFILE\.ssh\config in the earlier step for the remote Azure VM
 
+### Step 7: Install packages required for development
+
+```bash
+sudo apt install \
+    autoconf \
+    automake \
+    build-essential \
+    cmake \
+    gdb \
+    libtool
+```
+
 # References
 
 1. [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/)
