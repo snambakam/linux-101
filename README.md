@@ -34,6 +34,13 @@ This repository attempts to provide an introduction to Linux for developers who 
    1. Develop the client
    1. Develop the command line interface that links with the client
 
+#### Exercises
+
+1. Extend the Server to use syslog.
+   1. Verify using journalctl.
+1. Extend the Server to use a JSON based config file.
+   1. Define a signal handler that responds to SIGUSR1 to refresh the config file.
+
 ### Day 2
 
 1. Convert the service to gRPC
