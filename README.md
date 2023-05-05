@@ -23,7 +23,7 @@ This repository attempts to provide an introduction to Linux for developers who 
     1. Process Management
     1. UNIX Shell(s)
     1. Some basic commands
-1. [Develop a Hello World Program using C](docs/day-1/hello-world.md)
+1. [Develop a Hello World Program using C](docs/day-1/coding/hello-world.md)
 1. [Introduction to GDB](docs/day-1/gdb.md)
 1. Introduction to the UNIX process model
 1. Introduction to POSIX threads
