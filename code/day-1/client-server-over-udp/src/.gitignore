@@ -1,0 +1,74 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+Makefile.in
+aclocal.m4
+ar-lib
+autom4te.cache
+compile
+config.guess
+config.sub
+configure
+depcomp
+include/config.h.in
+include/config.h.in~
+install-sh
+ltmain.sh
+missing
+m4
+build/Makefile
+build/config.log
+build/config.status
+build/include
+build/libtool
+build/stage
+build/utils
