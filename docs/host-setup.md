@@ -1,8 +1,5 @@
 # Setup Development Hosts
 
-* auto-gen TOC:
-{:toc}
-
 ## Introduction
 
 For this course, we will use the following infrastructure.
