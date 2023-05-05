@@ -142,6 +142,25 @@ sudo apt install \
     libtool
 ```
 
+Install Docker
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh
+```
+
+Add yourself to the docker group.
+
+```bash
+sudo usermod -aG docker `whoami`
+```
+
+Reboot system
+
+```
+sudo shutdown -r now
+```
+
 # References
 
 1. [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/)
