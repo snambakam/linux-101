@@ -71,4 +71,48 @@ cd build
 make
 ```
 
+Run the server and make sure it works.
 
+```
+./server/csudsd/csudsd
+echo $?
+```
+
+## Step 2: Let us add a basic client
+
+Copy over the code for a [basic client](code/day-1/client-server-over-udp/reserve/basic-client).
+
+```
+cd ..
+mkdir client
+cp -r reserve/basic-client/* client/
+```
+
+Change configure.ac to include the new Makefile.am
+
+```
+AC_CONFIG_FILES([Makefile
+    client/Makefile
+    server/Makefile
+    server/csuds-server/Makefile
+    server/csudsd/Makefile
+    utils/Makefile
+])
+```
+
+Change top level Makefile.am to include server after utils.
+
+```
+SUBDIRS = \
+    utils \
+    server \
+    client
+```
+
+bootstrap and build
+
+```
+cd build
+./bootstrap.sh
+make
+```
