@@ -28,8 +28,8 @@ This repository attempts to provide an introduction to Linux for developers who 
 1. Introduction to the UNIX process model
 1. Introduction to POSIX threads
 1. Introduction to Signals
-1. Develop a multi-threaded client/server app using Unix Domain Sockets
-   1. Basic introduction to auto-tools (Autoconf/Automake/Configure/Make)
+1. [Develop a multi-threaded client/server app using Unix Domain Sockets](docs/day-1/coding/client-server-unix-domain-sockets.md)
+   1. [Basic introduction to auto-tools (Autoconf/Automake/Configure/Make)](docs/day-1/autotools.md)
    1. Develop the server
    1. Develop the client
    1. Develop the command line interface that links with the client
