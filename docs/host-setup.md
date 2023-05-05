@@ -31,7 +31,7 @@ ssh-keygen `
     -t rsa `
     -b 4096 `
     -C "<your-user-id>@<your-user-id>-ubuntu-dev-1" `
-    -f c:/users/<your-user-id>/.ssh/<your-user-id>-ubuntu-dev-1
+    -f $env:USERPROFILE/.ssh/<your-user-id>-ubuntu-dev-1
 ```
 Note: [Detailed notes on creating SSH keys](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
 
@@ -43,7 +43,7 @@ ssh-keygen `
     -t rsa `
     -b 4096 `
     -C "snambakam@snambakam-ubuntu-dev-1" `
-    -f c:/users/snambakam/.ssh/snambakam-ubuntu-dev-1
+    -f $env:USERPROFILE/.ssh/snambakam-ubuntu-dev-1
 ```
 
 ### Step 3: Generate VM in Azure
@@ -58,7 +58,7 @@ az vm create `
 	--public-ip-sku Standard `
 	--admin-username <your-user-id> `
 	--assign-identity [system] `
-	--ssh-key-values c:/users/<your-user-id>/.ssh/<your-user-id>-ubuntu-dev-1.pub `
+	--ssh-key-values $env:USERPROFILE/.ssh/<your-user-id>-ubuntu-dev-1.pub `
 	--location westus2
 ```
 
@@ -74,7 +74,7 @@ az vm create `
 	--public-ip-sku Standard `
 	--admin-username snambakam `
 	--assign-identity [system] `
-	--ssh-key-values c:/users/snambakam/.ssh/snambakam-ubuntu-dev-1.pub `
+	--ssh-key-values $env:USERPROFILE/.ssh/snambakam-ubuntu-dev-1.pub `
 	--location westus2
 ```
 
@@ -102,7 +102,34 @@ Host snambakam-ubuntu-dev-1
     IdentityFile "C:/Users/snambakam/.ssh/snambakam-ubuntu-dev-1"
 ```
 
+### Step 5: Add the private key to the keychain on Windows
+
+```powershell
+# By default the ssh-agent service is disabled. Configure it to start automatically.
+# Make sure you're running as an Administrator.
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+
+# Start the service
+Start-Service ssh-agent
+
+# This should return a status of Running
+Get-Service ssh-agent
+
+# Now load your key files into ssh-agent
+ssh-add $env:USERPROFILE\.ssh\<your-user-id>-ubuntu-dev-1
+```
+
+### Step 6: Connect remotely using VSCode
+
+1. Install [VSCode](https://code.visualstudio.com/download) on your Windows Desktop.
+1. Click on the "Extensions" icon on the left hand panel, search for "Remote - SSH" and install the plugin.
+1. On the bottom left corner, click on the "Open a Remote Window" icon and choose "Connect to Host".
+   1. Choose the profile that was created in $env:USERPROFILE\.ssh\config in the earlier step for the remote Azure VM
+
 # References
 
 1. [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/)
 1. [Device Login Page](https://microsoft.com/devicelogin)
+1. [Creating SSH Keys](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
+1. [OpenSSH Key Management on Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
+1. [Remote development using SSH on VSCode](https://code.visualstudio.com/docs/remote/ssh)
