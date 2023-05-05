@@ -11,11 +11,6 @@ CsUdsUtilsInitialize(
     void
     ) {
     uint32_t err = 0;
-
-    err = CsUdsUtilsSSLInitialize();
-    BAIL_ON_CSUDS_ERROR(err);
-
-error:
     return err;
 }
 
@@ -23,5 +18,4 @@ void
 CsUdsUtilsFinalize(
     void
     ) {
-    CsUdsUtilsSSLFinalize();
 }
