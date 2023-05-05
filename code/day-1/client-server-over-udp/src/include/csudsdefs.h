@@ -11,13 +11,13 @@
 
 #define CSUDS_SAFE_FREE_MEMORY(pMem) \
     if (pMem) { \
-        DtlsUtilsFreeMemory(pMem); \
+        CsUdsUtilsFreeMemory(pMem); \
         (pMem) = NULL; \
     }
 
 #define CSUDS_SAFE_FREE_STRING(pStr) \
     if (pStr) { \
-        DtlsUtilsFreeString(pStr); \
+        CsUdsUtilsFreeString(pStr); \
         (pStr) = NULL; \
     }
 
@@ -38,18 +38,18 @@
 
 #define CSUDS_VALIDATE_POINTER(pPtr) \
     if ((pPtr) == NULL) { \
-        err = ERROR_CSUDS_SESSION_INVALID_PARAMETER; \
+        err = ERROR_CSUDS_INVALID_PARAMETER; \
         BAIL_ON_CSUDS_ERROR(err); \
     }
 
 #define CSUDS_VALIDATE_STRING(pStr) \
     if (CSUDS_IS_NULL_OR_EMPTY_STRING(pStr)) { \
-        err = ERROR_CSUDS_SESSION_INVALID_PARAMETER; \
+        err = ERROR_CSUDS_INVALID_PARAMETER; \
         BAIL_ON_CSUDS_ERROR(err); \
     }
 
 #define CSUDS_VALIDATE_POSITIVE_INTEGER(positiveIntVal) \
     if ((positiveIntVal) < 0) { \
-        err = ERROR_CSUDS_SESSION_INVALID_PARAMETER; \
+        err = ERROR_CSUDS_INVALID_PARAMETER; \
         BAIL_ON_CSUDS_ERROR(err); \
     }
