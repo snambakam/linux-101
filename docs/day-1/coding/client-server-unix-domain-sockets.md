@@ -164,3 +164,40 @@ Run the command line interface and ensure it works
 ./tools/csuds-cli/csuds-cli
 echo $?
 ```
+
+## Step 5: Let us define a UNIX Domain Socket and a listener for the server
+
+Copy over the code for a [basic tools](code/day-1/client-server-over-udp/reserve/server-listener-with-epoll/csuds-server).
+
+```
+cd ../server/csuds-server
+cp -r ../../../reserve/server-listener-with-epoll/csuds-server/*.[ch]* .
+mkdir ../include
+cp -r ../../../reserve/server-listener-with-epoll/include/* ../include
+```
+
+Change Makefile.am to include the new files.
+
+```
+libcsuds_server_la_SOURCES = \
+    context.c \
+    globals.c \
+    libmain.c \
+    listener.c \
+    poller.c
+```
+
+The csuds-server folder builds a shared library. The corresponding header for
+this library is csuds-server.h which is present in the include folder outside
+the source folder.
+
+We need to add a compile flag to support the compilation within the csuds-server
+folder finding its public header. So, we add the path -I$(top_srcdir)/server/include
+as shown below.
+
+```
+libcsuds_server_la_CPPFLAGS = \
+    -I$(top_srcdir)/include \
+    -I$(top_srcdir)/include/public \
+    -I$(top_srcdir)/server/include
+```
