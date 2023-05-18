@@ -97,6 +97,7 @@ CsUdsServerPollerAddContext(
     CSUDS_SAFE_LOCK_MUTEX(bLocked, &pPoller->mutex);
     epollEvent.events = EPOLLIN | EPOLLET;
     epollEvent.data.fd = pContext->fd;
+    epollEvent.data.ptr = pContext;
     if (epoll_ctl(
             pPoller->ePollFd,
             EPOLL_CTL_ADD,
