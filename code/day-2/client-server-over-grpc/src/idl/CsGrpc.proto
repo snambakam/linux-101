@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+
+message CsGrpcVersionRpc {
+    int32 major = 1;
+    int32 minor = 2;
+}
+
+message GetVersionParams {}
+
+service CsGrpc {
+    rpc GetVersion(GetVersionParams) returns (CsGrpcVersionRpc) {}
+}
