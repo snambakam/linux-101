@@ -1,6 +1,5 @@
 #include "CsGrpcServiceImpl.hpp"
 #include "UUIDGenerator.hpp"
-#include <PathAssistant.hpp>
 #include <FileSystemUtils.hpp>
 #include <csgrpcdefs.h>
 
