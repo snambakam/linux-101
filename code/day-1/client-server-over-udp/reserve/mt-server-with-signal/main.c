@@ -26,5 +26,6 @@ main(int argc, char* argv[]) {
     err = CsUdsServerHandleSignals();
     BAIL_ON_CSUDS_ERROR(err);
 error:
+    CsUdsServerStop();
     return err;
 }
