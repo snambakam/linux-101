@@ -47,6 +47,9 @@ CsUdsServerHandleSignals(
 
     sigaction(SIGINT, &action, NULL);
 
+    sigemptyset(&mask);
+    sigaddset(&mask, SIGINT);
+
     err = pthread_sigmask(SIG_UNBLOCK, &mask, NULL);
     BAIL_ON_CSUDS_ERROR(err);
 
