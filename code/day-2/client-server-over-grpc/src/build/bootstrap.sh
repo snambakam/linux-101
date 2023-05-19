@@ -1,6 +1,14 @@
 #!/bin/bash
 
-export MAKE=gmake
+DISTRO=`cat /etc/os-release | grep "^ID" | awk -F "=" '{print $2;}'`
+
+case $DISTRO in
+	"ubuntu")
+		export MAKE=gmake
+		;;
+	*)
+		;;
+esac
 
 autoreconf -vif .. && \
 ../configure \

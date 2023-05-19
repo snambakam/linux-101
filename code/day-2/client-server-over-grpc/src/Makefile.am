@@ -7,7 +7,6 @@ SUBDIRS = \
 
 clean-local:
 	-rm -rf $(BUILDROOT)/stage
-	-rm -rf $(BUILDROOT)/build/*.deb
 
 distclean-local:
 	-rm -rf $(BUILDROOT)/build
